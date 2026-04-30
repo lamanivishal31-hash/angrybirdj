@@ -333,10 +333,18 @@ document.addEventListener("click",()=>{
 document.getElementById("music").play().catch(()=>{});
 },{once:true});
 
+ // TRACK PAGE
+function trackPage(name){
+  gtag('event', 'page_view', {
+    page_title: name
+  });
+}
+ 
 // NAV
 function go(id){
 document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
+trackPage(id);
 }
 
 // LOGIN
